@@ -147,6 +147,7 @@ public class AuthController {
     @PostMapping("/logout")
     public ResponseEntity<?> logoutUser(){
         UserDetailsImpl userDetails = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        System.out.println(userDetails);
         Long userId = userDetails.getId();
         service.deleteByUserId(userId);
         return ResponseEntity.ok(new MessageResponse("Logout Successfull"));
@@ -155,7 +156,7 @@ public class AuthController {
     @GetMapping("/he")
     public String getHe(){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        System.out.println(authentication);
+        System.out.println("authentication"+ authentication);
         return "ok";
     }
 }
