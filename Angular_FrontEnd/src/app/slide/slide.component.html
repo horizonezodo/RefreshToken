@@ -1,0 +1,12 @@
+<div class="slides">
+    <ng-container *ngFor="let slide of slides; let i = index">
+        <img *ngIf="i === currentSlide" [src]="slide.src" class="slide" @app-slideAnimation/>
+    </ng-container>
+
+    <button class="control prev">
+        <span class="arrow left" (click)="onPreviousClick()"></span>
+    </button>
+    <button class="control next">
+        <span class="arrow right" (click)="onNextClick()"></span>
+    </button>    
+</div>
