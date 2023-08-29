@@ -7,7 +7,7 @@ import { SlideInterface } from '../_model/slide-interface';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-  slides: SlideInterface[] = [
+  public slides = [
       {url: '/assets/Combo.jpg', title: 'combo food'},
       {url: '/assets/SeaFood.jpg', title: 'sea food'},
       {url: '/assets/ShuShi.jpg', title: 'shushi'},

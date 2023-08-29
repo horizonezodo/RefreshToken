@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA,NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +17,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { BrowserAnimationsModule }  from "@angular/platform-browser/animations";
+import { register } from 'swiper/element/bundle';
+import { MenuComponent } from './menu/menu.component';
+register();
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +31,7 @@ import { BrowserAnimationsModule }  from "@angular/platform-browser/animations";
     DashboardComponent,
     AboutComponent,
     ContactComponent,
+    MenuComponent,
   ],    
   imports: [
     BrowserModule,
@@ -42,6 +46,7 @@ import { BrowserAnimationsModule }  from "@angular/platform-browser/animations";
     multi:true
   }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
